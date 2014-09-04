@@ -17,6 +17,8 @@ $susy: (columns: 12, gutters: 1 / 4, container-width: 100%)
 
 // ----- Breakpoints ----- //
 
+$breakpoint-desk: 57.5em !default
+$breakpoint-tablet: 41.25em !default
 
 // -------------------------------------
 //   @font-face
@@ -31,8 +33,43 @@ $susy: (columns: 12, gutters: 1 / 4, container-width: 100%)
 
 // ----- Base ----- //
 
+$c-background-invert: #fff !default
+$c-secondary: #024c6f !default
+$c-text: #fff !default
+
 // ----- Structures ----- //
 
+// musicplay
+
+$musicplay-title: $c-text !default
+$musicplay-artist: #fefefe !default
+$musicplay-album: #9f9d9d !default
+$musicplay-cover-boder: $c-text !default
+
+// queuelist
+
+$queuelist-playing: $c-text !default
+$queuelist-queue: #505050 !default
+
+// searchbar
+
+$searchbar-background: #1a1a1a !default
+$searchbar-icon: $c-text !default
+$searchbar-text: $c-text !default
+$searchbar-arrow: #b2b2b2 !default
+
+// songlist
+
+$songlist-border: #494949 !default
+
+// ----- Components ----- //
+
+// button
+
+$button-background: $c-secondary !default
+$button-text: $c-background-invert !default
+$button-disable-background: #a8a8a8 !default
+$button-disable-text: #858585 !default
 
 // -------------------------------------
 //   Base
@@ -40,11 +77,32 @@ $susy: (columns: 12, gutters: 1 / 4, container-width: 100%)
 
 // ----- Borders & Box Shadow ----- //
 
+$b-borderRadius: 3px !default
+
 // ----- Typography ----- //
 
+$b-fontFamily: "Century Gothic", "小塚ゴシック", "LiHei Pro", "微軟正黑體", sens-serif
+$b-fontSize: 13px !default
+$b-fontSize-xs: 60% !default
+$b-fontSize-s: 75% !default
+$b-fontSize-m: 90% !default
+$b-fontSize-l: 115% !default
+$b-fontSize-xl: 150% !default
+$b-lineHeight: 1.6 !default
+
 // ----- Sizing ----- //
+
+$b-space: em(30px) !default
+$b-space-xs: 0.25 * $b-space !default
+$b-space-s: 0.5 * $b-space !default
+$b-space-l: 2 * $b-space !default
+$b-space-xl: 4 * $b-space !default
 
 
 // -------------------------------------
 //   Structures
 // -------------------------------------
+
+// page
+
+$page-background: image-url('bg-page.jpg')
