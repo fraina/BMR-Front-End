@@ -1,0 +1,146 @@
+.mejs-controls div {
+	float: left;
+}
+
+/* play/pause control */
+.mejs-controls .mejs-button a {
+	border: 0;
+	background: 0;
+	cursor: pointer;
+	display: block;
+	position: absolute;
+}
+
+/* mute/unmute control */
+.mejs-controls .mejs-mute a, .mejs-controls .mejs-unmute a {
+	width: 18px;
+	height: 19px;
+	top: 9px;
+	right: 142px;
+}
+
+
+/* volume scrubber bar */
+.mejs-controls div.mejs-horizontal-volume-slider {
+	position: absolute;
+	top: 13px;
+	right: 15px;
+	cursor: pointer;
+}
+
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
+	width: 120px;
+	height: 11px;
+	background: #212227;
+	-webkit-box-shadow: inset 0px 1px 0px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,0.25);
+	-moz-box-shadow: inset 0px 1px 0px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,0.25);
+	box-shadow: inset 0px 1px 0px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,0.25);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+	@include border-radius(8px);
+	position: absolute;
+	width: 0;
+	height: 9px;
+	top: 1px;
+	left: 1px;
+	background: #90d26a;
+	background: -webkit-linear-gradient(top, #90d26a 0%, #83bb63 100%);
+	background: -moz-linear-gradient(top, #90d26a 0%, #83bb63 100%);
+	background: -o-linear-gradient(top, #90d26a 0%, #83bb63 100%);
+	background: -ms-linear-gradient(top, #90d26a 0%, #83bb63 100%);
+	background: linear-gradient(top, #90d26a 0%, #83bb63 100%);
+}
+
+
+/* time scrubber bar */
+.mejs-controls div.mejs-time-rail { width: 60%; }
+
+.mejs-controls .mejs-time-rail span {
+	@include border-radius(0 0 2px 2px);
+	display: block;
+	height: 2px;
+	top: 40px;
+	left: 55px;
+	cursor: pointer;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-total {
+	@include border-radius(3px);
+	width: 150px;
+	background: #565860;
+}
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+	@include border-radius(3px);
+	position: absolute;
+	width: 150px;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: #fff;
+}
+.mejs-controls .mejs-time-rail .mejs-time-current {
+	@include border-radius(3px);
+	top: 0;
+	left: 0;
+	width: 0;
+	background: #90d26a;
+	background: -webkit-linear-gradient(top, #90d26a 0%, #83bb63 100%);
+	background: -moz-linear-gradient(top, #90d26a 0%, #83bb63 100%);
+	background: -o-linear-gradient(top, #90d26a 0%, #83bb63 100%);
+	background: -ms-linear-gradient(top, #90d26a 0%, #83bb63 100%);
+	background: linear-gradient(top, #90d26a 0%, #83bb63 100%);
+}
+
+/* metallic sliders */
+.mejs-controls .mejs-time-rail .mejs-time-handle {
+	@include border-radius(8px);
+	position: absolute;
+	display: block;
+	width: 8px;
+	height: 8px;
+	top: -4px;
+	border: 1px white solid;
+	background-color: $c-secondary;
+}
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle {
+	position: absolute;
+	display: block;
+	width: 12px;
+	height: 14px;
+	top: -1px;
+}
+
+
+/* time progress tooltip */
+.mejs-controls .mejs-time-rail .mejs-time-float {
+	position: absolute;
+	display: none;
+	width: 33px;
+	height: 23px;
+	top: -26px;
+	margin-left: -17px;
+	z-index: 9999;
+	background: url('time-box.png');
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-float-current {
+	width: 33px;
+	display: block;
+	left: 0;
+	top: 4px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #666;
+	text-align: center;
+	z-index: 9999;
+}
+
+/** clearfix **/
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }

@@ -3,3 +3,46 @@
 //   Music Player & imformation
 //
 // *************************************
+
+.player
+	background-image: image-url('bg-player.jpg')
+	display: block
+	padding: $b-space-s
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- infomatioin ----- //
+
+.player-info
+	margin: 0
+	overflow: hidden
+	figcaption
+		position: relative
+		float: left
+		margin-left: $b-space-s
+	span
+		display: block
+
+.player-cover
+	+border-radius($b-borderRadius)
+	width: 100px
+	height: 100px
+	float: left
+	border: 1px $player-title solid
+
+.player-title
+	color: $player-title
+	font-weight: bold
+	font-size: $b-fontSize-l
+
+.player-artist
+	color: $player-artist
+
+.player-album
+	color: $player-album
+
+.player-controller
+	position: relative
+	width: 300px
