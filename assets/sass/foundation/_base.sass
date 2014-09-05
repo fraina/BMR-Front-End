@@ -6,15 +6,33 @@
 // *************************************
 
 html
-	background: $page-background
 	color: $c-text
 	font-family: $b-fontFamily
 	font-size: $b-fontSize
 	line-height: $b-lineHeight
+	background: $page-background no-repeat left bottom fixed
+	+background-size(cover)
 
 body
-	+container
 	font-size: 100%
+
+.container
+	+container(show)
+	border: $rd
+	width: columns(4)
+	height: 100%
+
+	+susy-breakpoint($breakpoint-tablet, 8)
+		+container(show)
+		width: columns(8)
+		border: 1px blue solid
+
+	+susy-breakpoint($breakpoint-desk, 12)
+		+container(show)
+		width: columns(12)
+		border: 1px green solid
+
+
 
 // -------------------------------------
 //   Block Content
