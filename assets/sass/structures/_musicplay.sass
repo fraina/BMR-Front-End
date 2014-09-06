@@ -5,9 +5,12 @@
 // *************************************
 
 .player
+	padding: $b-space 0 $b-space-s
+	position: relative
+	width: 100%
 	background-image: image-url('bg-player.jpg')
-	display: block
-	padding: $b-space-s
+	+susy-breakpoint($breakpoint-tablet, 8)
+		display: table
 
 // -------------------------------------
 //   Scaffolding
@@ -15,22 +18,36 @@
 
 // ----- infomatioin ----- //
 
-.player-info
-	margin: 0
-	overflow: hidden
-	figcaption
-		position: relative
-		float: left
-		margin-left: $b-space-s
-	span
-		display: block
-
 .player-cover
 	+border-radius($b-borderRadius)
 	width: 100px
 	height: 100px
-	float: left
 	border: 1px $player-title solid
+	display: block
+	margin: 0 auto
+	img
+		width: 100px
+
+	+susy-breakpoint($breakpoint-tablet, 8)
+		display: table-cell
+		vertical-align: top
+		width: 100px
+		height: 100px
+		border: 1px $player-title solid
+		display: block
+		margin: $b-space-s
+
+.player-info
+	width: 80%
+	margin: auto
+	dd
+		margin: 0
+	+susy-breakpoint($breakpoint-tablet, 8)
+		width: 100%
+		display: table-cell
+		vertical-align: top
+		position: relative
+		padding-right: $b-space-s
 
 .player-title
 	color: $player-title
@@ -45,4 +62,4 @@
 
 .player-controller
 	position: relative
-	width: 300px
+	width: 100%

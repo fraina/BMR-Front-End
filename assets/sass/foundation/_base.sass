@@ -15,20 +15,17 @@ html
 
 body
 	font-size: 100%
+	width: 100%
 
 .container
 	+container(show)
-	width: columns(4)
-	height: 100%
 
 	+susy-breakpoint($breakpoint-tablet, 8)
 		+container(show)
-		width: columns(8)
 		border: 1px blue solid
 
 	+susy-breakpoint($breakpoint-desk, 12)
 		+container(show)
-		width: columns(12)
 		border: 1px green solid
 
 

@@ -49,8 +49,7 @@ require([
     alwaysShowControls: true,
     features: ['playpause','progress','volume'],
     audioVolume: 'horizontal',
-    audioWidth: 450,
-    audioHeight: 70,
+    audioWidth: '100%',
     iPadUseNativeControls: true,
     iPhoneUseNativeControls: true,
     AndroidUseNativeControls: true
