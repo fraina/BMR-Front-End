@@ -8,8 +8,31 @@
 <body>
 
 	<div class="container">
-		<div class="player"></div>
+		<div class="player">
+			<div class="player-cover">
+				<img src="images/cover/im-so-happy.jpg" alt="I'm so Happy - Ryu☆" />
+			</div>
+			<div class="player-info">
+				<dl>
+					<dt class="player-title">I'm so Happy</dt>
+					<dd class="player-artist ellipsis">Ryu☆</dd>
+					<dd class="player-album ellipsis">Rainbow☆Rainbow Disclaimer</dd>
+				</dl>
+
+				<div class="player-controller">
+					<audio id="audio-player" src="js/vendor/media-element/Im-so-Happy.mp3" type="audio/mp3" controls="controls"></audio>
+				</div>
+			</div>
+		</div>
 	</div>
+
+	<!--
+	<div id="coverflow">
+	    <img src="images/cover/kidrock-bornfree.jpg" />
+	    <img src="images/cover/kingsofleon-comearoundsunshine.jpg" />
+	    <img src="images/cover/lilwayne-iamnotahumanbeing.jpg" />
+	</div>
+	-->
 
 	<script data-main="js/main" src="js/lib/requirejs/require.js"></script>
 </body>

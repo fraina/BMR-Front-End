@@ -1,0 +1,127 @@
+.mejs-container {
+	position: relative;
+}
+
+.mejs-controls {
+	@extend .table;
+	width: 100%;
+}
+
+.mejs-button {
+	@extend .td;
+	cursor: pointer;
+	height: 17px;
+	float: left;
+	display: table-cell;
+	margin-left: -4px;
+	margin-right: 5px;
+	&.mejs-volume-button {
+		margin-right: 0;
+		margin-left: $b-space-xs;
+	}
+}
+
+.mejs-time-rail {
+	@include border-radius(2px);
+	@extend .td;
+	position: relative;
+	height: 2px;
+	cursor: pointer;
+	display: table-cell;
+
+	.mejs-time-total{
+		@include border-radius(3px);
+		height: 2px;
+		background: $player-total;
+		display: block;
+	}
+
+	.mejs-time-loaded {
+		@include border-radius(3px);
+		width: 0;
+		height: 2px;
+		background: #fff;
+	}
+
+	.mejs-time-current {
+		@include border-radius(3px);
+		position: absolute;
+		width: 0;
+		height: 2px;
+		margin-left: -1px;
+		background: $player-current;
+	}
+
+	.mejs-time-handle {
+		@include border-radius(8px);
+		position: absolute;
+		display: block;
+		width: 8px;
+		height: 8px;
+		margin-top: -4px;
+		border: 1px white solid;
+		background-color: $player-current;
+	}
+}
+
+/* volume scrubber bar */
+.mejs-horizontal-volume-slider {
+	@extend .td;
+	position: relative;
+	width: 50px;
+	cursor: pointer;
+	display: table-cell;
+	height: 2px;
+
+	.mejs-horizontal-volume-total {
+		@include border-radius(4px);
+		width: 50px;
+		height: 2px;
+		background: $player-total;
+	}
+
+	.mejs-horizontal-volume-current {
+		@include border-radius(8px);
+		position: absolute;
+		margin-top: -2px;
+		margin-left: -1px;
+		width: 0;
+		height: 2px;
+		background: $player-current;
+	}
+
+	.mejs-horizontal-volume-handle {
+		position: absolute;
+		display: block;
+		width: 12px;
+		height: 14px;
+		top: -1px;
+	}
+}
+
+
+/* time progress tooltip */
+.mejs-controls .mejs-time-rail .mejs-time-float {
+	position: absolute;
+	display: none;
+	padding: 2px 4px;
+	top: 24px;
+	margin-left: -17px;
+	z-index: 9999;
+	background: rgba(0, 0, 0, .5);
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-float-current {
+	display: block;
+	left: 0;
+	top: 4px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #666;
+	text-align: center;
+	z-index: 9999;
+}
+
+/* * clearfix * */
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
