@@ -18,11 +18,6 @@ body
 	width: 100%
 
 .container
-	+container(show)
-
-	+susy-breakpoint($breakpoint-tablet, 8)
-		+container(show)
-		border: 1px blue solid
 
 	+susy-breakpoint($breakpoint-desk, 12)
 		+container(show)
@@ -36,3 +31,6 @@ body
 // -------------------------------------
 //   Inline Content
 // -------------------------------------
+
+a
+	text-decoration: none

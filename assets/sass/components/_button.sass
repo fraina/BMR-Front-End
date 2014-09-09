@@ -3,3 +3,13 @@
 //   Button
 //
 // *************************************
+
+.b-button
+	+border-radius($b-borderRadius)
+	padding: 5px 12px
+	color: $button-text
+	background-color: $button-background
+	&.is-active
+		+text-shadow(0 -1px 1px rgba(white, .3))
+		color: $button-disable-text
+		background-color: $button-disable-background

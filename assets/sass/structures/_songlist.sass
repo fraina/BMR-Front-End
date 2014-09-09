@@ -4,14 +4,41 @@
 //
 // *************************************
 
+.songList
+	margin: 0 gutter(3)
+	+susy-breakpoint($breakpoint-tablet, 8)
+		margin: 0 gutter(4)
+
 // -------------------------------------
 //   Scaffolding
 // -------------------------------------
 
-// ----- coverflow ----- //
+.songList-table
+	@extend %table
+	width: 100%
+	th:nth-child(4),
+	th:nth-child(5),
+	td:nth-child(4),
+	td:nth-child(5)
+		display: none
 
-.coverflow
+	+susy-breakpoint($breakpoint-tablet, 8)
+		th:nth-child(4),
+		th:nth-child(5),
+		td:nth-child(4),
+		td:nth-child(5)
+			display: table-cell
+
+// ----- status ----- //
+
+.songList-media--mobile
 	display: block
-	width: 600px
-	height: 420px
-	border: $rd
+	+susy-breakpoint($breakpoint-desk, 12)
+		display: none
+
+.songList-media--desktop
+	display: none
+	+susy-breakpoint($breakpoint-desk, 12)
+		display: block
+
+// ----- coverflow ----- //
