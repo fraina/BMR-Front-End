@@ -4,3 +4,34 @@
 //   > song list
 //
 // *************************************
+
+%table
+	line-height: $b-lineHeight * 2
+	thead
+		font-weight: bold
+		font-size: $b-fontSize-l
+		border-bottom: 2px $songlist-border solid
+		text-align: left
+		th
+			&:first-child
+				text-align: center
+			&:last-child
+				text-align: center
+				width: $b-space-l
+				+susy-breakpoint($breakpoint-tablet, 8)
+					width: $b-space-l + 2em
+			&:nth-last-child(2)
+				text-align: center
+				width: $b-space-l
+				+susy-breakpoint($breakpoint-tablet, 8)
+					width: $b-space-l + 2em
+
+	tbody
+		tr
+			border-bottom: 1px $songlist-border solid
+		td:first-child
+			text-align: center
+		td:last-child
+			text-align: center
+		td:nth-last-child(2)
+			text-align: center

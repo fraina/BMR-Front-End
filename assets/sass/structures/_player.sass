@@ -10,6 +10,7 @@
 	width: 100%
 	background-image: image-url('bg-player.jpg')
 	+susy-breakpoint($breakpoint-tablet, 8)
+		padding-bottom: $b-space
 		display: table
 
 // -------------------------------------
@@ -35,19 +36,21 @@
 		height: 100px
 		border: 1px $player-title solid
 		display: block
-		margin: $b-space-s
+		margin: 0 gutter(0.8)
 
 .player-info
-	width: 80%
-	margin: auto
+	margin: 0 gutter(3)
 	dd
 		margin: 0
+	dl
+		margin-top: 0
 	+susy-breakpoint($breakpoint-tablet, 8)
 		width: 100%
 		display: table-cell
 		vertical-align: top
 		position: relative
-		padding-right: $b-space-s
+		padding-left: gutter(3)
+		padding-right: gutter(3)
 
 .player-title
 	color: $player-title

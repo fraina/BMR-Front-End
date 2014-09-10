@@ -11,18 +11,33 @@ html
 	font-size: $b-fontSize
 	line-height: $b-lineHeight
 	background: $page-background no-repeat left bottom fixed
+	overflow: hidden
+	overflow-x: hidden
 	+background-size(cover)
 
 body
 	font-size: 100%
 	width: 100%
+	overflow: hidden
+	overflow-x: hidden
+
 
 .container
-	+container(show)
-
-	+susy-breakpoint($breakpoint-tablet, 8)
-		+container(show)
-		border: 1px blue solid
+	position: absolute
+	width: 100%
+	overflow-x: hidden
+	transition: all 0.3s
+	&.hide
+		position: fixed
+		margin-top: 30%
+		backface-visibility: visible
+		transform: perspective(600px)
+		-webkit-transform: rotateX(45deg)
+		-moz-transform: rotateX(45deg)
+		-webkit-transform-style: preserve-3d
+		-moz-transform-style: preserve-3d
+		transform-origin: 50% 100% 0px
+		+opacity(.47)
 
 	+susy-breakpoint($breakpoint-desk, 12)
 		+container(show)
@@ -33,6 +48,14 @@ body
 //   Block Content
 // -------------------------------------
 
+li
+	list-style: none
+	padding-top: $b-space-s / 3
+	padding-bottom: $b-space-s / 3
+
 // -------------------------------------
 //   Inline Content
 // -------------------------------------
+
+a
+	text-decoration: none

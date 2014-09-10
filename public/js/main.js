@@ -13,7 +13,9 @@ require({
 			"supportCore": "vendor/coverflow/support.core",
 			"supportTransform": "vendor/coverflow/support.transform3d",
 
-			"mediaElement": "vendor/media-element/mediaelement-and-player.min"
+			"mediaElement": "vendor/media-element/mediaelement-and-player.min",
+			"niceScroll": "vendor/nicescroll/jquery.nicescroll.min",
+			"niceScrollplus": "vendor/nicescroll/jquery.nicescroll.plus"
 	},
 
 	shim: {
@@ -41,17 +43,61 @@ require({
 require([
 	'jquery',
 	'coverflowjs',
-	'mediaElement'
-], function (jquery, coverflowjs, mediaElement) {
-  $('#coverflow').coverflow();
+	'mediaElement',
+	'niceScroll',
+	'niceScrollplus'
+], function (jquery, coverflowjs, mediaElement, niceScroll, niceScrollplus) {
 
-  $('#audio-player').mediaelementplayer({
-    alwaysShowControls: true,
-    features: ['playpause','progress','volume'],
-    audioVolume: 'horizontal',
-    audioWidth: '100%',
-    iPadUseNativeControls: true,
-    iPhoneUseNativeControls: true,
-    AndroidUseNativeControls: true
-  });
+	var $body = $('body'),
+			$container = $(".container"),
+			$audio_player = $('#audio-player'),
+			$icon_queue = $(".icon-openQueue"),
+			$queueList_mobile = $('.queueList-mobile'),
+			$queueList_mobileList = $('.queueList-mobileList'),
+			$queueList_mobile_li = $('.queueList-mobileList ul li');
+
+	$('#coverflow').coverflow();
+
+	$audio_player.mediaelementplayer({
+		alwaysShowControls: true,
+		features: ['playpause','progress','volume'],
+		audioVolume: 'horizontal',
+		audioWidth: '100%',
+		iPadUseNativeControls: true,
+		iPhoneUseNativeControls: true,
+		AndroidUseNativeControls: true
+	});
+
+	function scrollable() {
+		$body.niceScroll({
+			zindex: 99999,
+			styler: "fb",
+			cursorcolor: '#2F7096',
+			cursorborder: '#2F7096'
+		});
+	}
+
+	scrollable();
+
+	$queueList_mobile_li.hide();
+	$icon_queue.click(function() {
+		$(this).toggleClass("on");
+		$container.toggleClass('hide');
+		$queueList_mobile.toggleClass('is-active');
+
+		if ( ! $container.hasClass('hide')) {
+			$queueList_mobile.animate({'background-color':'rgba(0, 0, 0, 0)'},'fast');
+			$queueList_mobile_li.fadeOut();
+			$body.delay(300).queue(function(next){
+				$(this).removeClass('ofh');
+				next();
+			})
+		} else {
+			$queueList_mobile.animate({'background-color':'rgba(0, 0, 0, .7)'},'fast');
+			$queueList_mobileList.show();
+			$body.addClass('ofh');
+			$queueList_mobile_li.fadeIn();
+		}
+	});
+
 })
