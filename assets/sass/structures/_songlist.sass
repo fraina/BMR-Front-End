@@ -21,6 +21,10 @@
 	td:nth-child(4),
 	td:nth-child(5)
 		display: none
+	.btn.is-active
+		+text-shadow(0 -1px 1px rgba(white, .3))
+		color: $button-disable-text
+		background-color: $button-disable-background
 
 	+susy-breakpoint($breakpoint-tablet, 8)
 		th:nth-child(4),

@@ -47,13 +47,14 @@ $player-title: $c-text !default
 $player-artist: #fefefe !default
 $player-album: #9f9d9d !default
 $player-cover-boder: $c-text !default
-$player-current: $c-secondary
-$player-total: #494949
+$player-current: $c-secondary !default
+$player-total: #494949 !default
 
 // queuelist
 
 $queuelist-playing: $c-text !default
 $queuelist-queue: #505050 !default
+$queuelist-mobile-background: #000 !default
 
 // searchbar
 
@@ -66,15 +67,6 @@ $searchbar-arrow: #b2b2b2 !default
 
 $songlist-border: rgba(white, .2) !default
 
-// ----- Components ----- //
-
-// button
-
-$button-background: $c-secondary !default
-$button-text: $c-background-invert !default
-$button-disable-background: #a8a8a8 !default
-$button-disable-text: #858585 !default
-
 // -------------------------------------
 //   Base
 // -------------------------------------
@@ -85,7 +77,7 @@ $b-borderRadius: 3px !default
 
 // ----- Typography ----- //
 
-$b-fontFamily: "Century Gothic", "LiHei Pro", "小塚ゴシック", "WenQuanYi Micro Hei", "微軟正黑體", sens-serif
+$b-fontFamily: "Century Gothic", "LiHei Pro", "小塚ゴシック", "WenQuanYi Micro Hei", "微軟正黑體", sens-serif !default
 $b-fontSize: 12px !default
 $b-fontSize-xs: 60% !default
 $b-fontSize-s: 75% !default
@@ -102,6 +94,13 @@ $b-space-s: 0.5 * $b-space !default
 $b-space-l: 2 * $b-space !default
 $b-space-xl: 4 * $b-space !default
 
+// ----- button ----- //
+
+$button-background: $c-secondary !default
+$button-text: $c-background-invert !default
+$button-disable-background: #a8a8a8 !default
+$button-disable-text: #858585 !default
+
 
 // -------------------------------------
 //   Structures
@@ -109,4 +108,4 @@ $b-space-xl: 4 * $b-space !default
 
 // page
 
-$page-background: image-url('bg-page.jpg')
+$page-background: image-url('bg-page.jpg') !default
