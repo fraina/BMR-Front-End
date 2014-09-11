@@ -58,7 +58,9 @@ require([
 			$queueList_mobile = $('.queueList-mobile'),
 			$queueList_mobileList = $('.queueList-mobileList'),
 			$queueList_mobile_li = $('.queueList-mobileList ul li'),
-			$searchBar_mobileList = $('.searchBar-mobileList');
+			$searchBar_mobileList = $('.searchBar-mobileList'),
+			$queuelist_option_i = $('.queuelist-option i'),
+			$queuelist_list = $('.queuelist-list');
 
 	// $('#coverflow').coverflow();
 
@@ -116,5 +118,12 @@ require([
 			$searchBar_mobileList.hide();
 		}
 	});
+
+	$queuelist_option_i.click(function(){
+		if ( ! $(this).hasClass('is-active')) {
+			$(this).addClass('is-active').siblings().toggleClass('is-active');
+			$queuelist_list.find('ul:visible').hide().siblings().fadeIn('fast');
+		}
+	})
 
 })
