@@ -19,6 +19,9 @@
 		margin-right: 0;
 		margin-left: $b-space-xs;
 	}
+	@include susy-breakpoint($breakpoint-desk, 12) {
+		padding: 0;
+	}
 }
 
 .mejs-time-rail {
@@ -28,6 +31,9 @@
 	height: 2px;
 	cursor: pointer;
 	display: table-cell;
+	@include susy-breakpoint($breakpoint-desk, 12) {
+		padding: 0;
+	}
 
 	.mejs-time-total{
 		@include border-radius(3px);
