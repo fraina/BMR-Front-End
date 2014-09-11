@@ -37,7 +37,7 @@ body
 		-webkit-transform-style: preserve-3d
 		-moz-transform-style: preserve-3d
 		transform-origin: 50% 100% 0px
-		+opacity(.47)
+		+opacity(.1)
 
 	+susy-breakpoint($breakpoint-desk, 12)
 		+container(show)
@@ -59,3 +59,52 @@ li
 
 a
 	text-decoration: none
+
+%resetforms
+	+box-shadow(0 1px 1px rgba(black, .3) inset)
+	+border-radius($b-borderRadius)
+	color: $c-text
+	background-color: rgba(white, .5)
+	border: none
+	border-style: none
+	background-image: none
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	&:focus
+		outline: none
+	&:-moz-focusring
+		color: transparent
+		text-shadow: 0 0 0 #000
+
+
+select
+	@extend %resetforms
+	width: 130%
+	padding: $b-space-xs $b-space-xs
+	background-color: transparent
+
+input
+	@extend %resetforms
+	padding: ($b-space-xs + 0.1em) $b-space-xs
+	&:-moz-placeholder,
+	&:-ms-input-placeholder
+		+text-shadow(0 -1px 1px rgba(black, .5))
+		font-style: italic
+		color: rgba(white, .2)
+		font-weight: bold
+		letter-spacing: 0.07em
+
+::-webkit-input-placeholder
+	+text-shadow(0 -1px 1px rgba(black, .5))
+	font-style: italic
+	color: rgba(white, .5)
+	font-weight: bold
+	letter-spacing: 0.1em
+
+::-moz-placeholder
+	+text-shadow(0 -1px 1px rgba(black, .5))
+	font-style: italic
+	color: rgba(white, .5)
+	font-weight: bold
+	letter-spacing: 0.1em

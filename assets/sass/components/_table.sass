@@ -6,13 +6,13 @@
 // *************************************
 
 %table
-	line-height: $b-lineHeight * 2
 	thead
 		font-weight: bold
 		font-size: $b-fontSize-l
 		border-bottom: 2px $songlist-border solid
 		text-align: left
 		th
+			padding: $b-space-xs + 0.2em
 			&:first-child
 				text-align: center
 			&:last-child
@@ -29,9 +29,11 @@
 	tbody
 		tr
 			border-bottom: 1px $songlist-border solid
-		td:first-child
-			text-align: center
-		td:last-child
-			text-align: center
-		td:nth-last-child(2)
-			text-align: center
+		td
+			padding: $b-space-xs + 0.2em
+			&:first-child
+				text-align: center
+			&:last-child
+				text-align: center
+			&:nth-last-child(2)
+				text-align: center
