@@ -1,0 +1,70 @@
+// *************************************
+//
+//   SearchBar
+//
+// *************************************
+
+// .searchbar
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// -------------------------------------
+//   Status
+// -------------------------------------
+
+// -------------------------------------
+//   Mobile
+// -------------------------------------
+
+// ----- icon ----- //
+
+.icon-search
+	display: none
+	position: absolute
+	z-index: 9999
+	cursor: pointer
+	margin-top: $b-space + 1em
+	right: gutter(3) - 0.5%
+	pointer-events: auto
+	font-size: ($b-fontSize * 2)
+	color: #494949
+	transition: all 0.3s
+	&.is-active
+		+text-shadow(0 0 5px rgba(white, .8))
+		color: $c-text
+
+// ----- search page ----- //
+
+.searchBar-mobileList
+	@extend %songlist-mobile
+	display: none
+
+.searchBar-area
+	margin-right: $b-space
+	width: 100%
+
+.searchBar-typeSelect
+	+border-radius(3px)
+	position: relative
+	padding: 0
+	margin: 0
+	bottom: 1px #ccc solid
+	width: 95%
+	float: left
+	overflow: hidden
+	background-color: $searchbar-background
+
+	.icon-dropDown
+		position: absolute
+		right: $b-space-xs
+		top: 50%
+		margin-top: -9px
+		pointer-events: none
+		color: $searchbar-arrow
+
+.searchBar-search input
+	width: 100%
+	float: left
+	margin-left: - $b-space-xs

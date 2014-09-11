@@ -14,10 +14,31 @@
 //   Status
 // -------------------------------------
 
-// ----- queue list ----- //
+// -------------------------------------
+//   Mobile
+// -------------------------------------
+
+.mobileList
+	display: none
+
+// ----- icon ----- //
+
+.icon-openQueue
+	z-index: 9999
+	cursor: pointer
+	float: right
+	margin-top: $b-space-s + 1em
+	margin-right: gutter(3)
+	pointer-events: auto
+	clear: both
+	+susy-breakpoint($breakpoint-desk, 12)
+		display: none
+	&:hover
+
+// ----- queue & history list ----- //
 
 .queueList-mobile
-	position: absolute
+	position: fixed
 	height: 100%
 	width: 100%
 	z-index: 9999
@@ -25,20 +46,16 @@
 	&.is-active
 		pointer-events: auto
 
-	.icon-openQueue
-		z-index: 9999
-		cursor: pointer
-		float: right
-		margin-top: $b-space-s + 1em
-		margin-right: gutter(3)
-		pointer-events: auto
-		+susy-breakpoint($breakpoint-desk, 12)
-			display: none
-		&:hover
+%songlist-mobile
+	margin: $b-space gutter(3)
+	padding-right: $b-space
+	overflow-x: auto
+	top: 0
 
 .queueList-mobileList
-	margin: $b-space gutter(3)
-	overflow-x: auto
+	@extend %songlist-mobile
+	ul:first-child
+		margin-top: 0
 
 	+susy-breakpoint($breakpoint-tablet, 8)
 		ul
@@ -51,3 +68,7 @@
 	i
 		position: absolute
 		margin-left: - ($b-space-s + 0.8em)
+
+// -------------------------------------
+//   Status
+// -------------------------------------

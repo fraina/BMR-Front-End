@@ -49,14 +49,18 @@ require([
 ], function (jquery, coverflowjs, mediaElement, niceScroll, niceScrollplus) {
 
 	var $body = $('body'),
-			$container = $(".container"),
+			$container = $('.container'),
 			$audio_player = $('#audio-player'),
 			$icon_queue = $(".icon-openQueue"),
+			$icon_search = $('.icon-search'),
+			$overlay = $('.overlay'),
+			$mobileList = $('.mobileList'),
 			$queueList_mobile = $('.queueList-mobile'),
 			$queueList_mobileList = $('.queueList-mobileList'),
-			$queueList_mobile_li = $('.queueList-mobileList ul li');
+			$queueList_mobile_li = $('.queueList-mobileList ul li'),
+			$searchBar_mobileList = $('.searchBar-mobileList');
 
-	$('#coverflow').coverflow();
+	// $('#coverflow').coverflow();
 
 	$audio_player.mediaelementplayer({
 		alwaysShowControls: true,
@@ -69,34 +73,47 @@ require([
 	});
 
 	function scrollable() {
-		$body.niceScroll({
+		$('html').niceScroll({
 			zindex: 99999,
 			styler: "fb",
 			cursorcolor: '#2F7096',
 			cursorborder: '#2F7096'
 		});
 	}
-
 	scrollable();
 
-	$queueList_mobile_li.hide();
 	$icon_queue.click(function() {
 		$(this).toggleClass("on");
-		$container.toggleClass('hide');
+		$container.stop(false,true).toggleClass('hide');
 		$queueList_mobile.toggleClass('is-active');
 
 		if ( ! $container.hasClass('hide')) {
-			$queueList_mobile.animate({'background-color':'rgba(0, 0, 0, 0)'},'fast');
-			$queueList_mobile_li.fadeOut();
+			$overlay.stop(false,true).fadeOut();
+			$icon_search.hide();
+			$mobileList.stop(false,true).fadeOut();
 			$body.delay(300).queue(function(next){
 				$(this).removeClass('ofh');
 				next();
 			})
 		} else {
-			$queueList_mobile.animate({'background-color':'rgba(0, 0, 0, .7)'},'fast');
-			$queueList_mobileList.show();
+			$overlay.stop(false,true).fadeIn('fast');
+			$icon_search.stop(false,true).fadeIn();
+			$mobileList.stop(false,true).fadeIn();
 			$body.addClass('ofh');
-			$queueList_mobile_li.fadeIn();
+		}
+	});
+
+	$icon_search.click(function(event) {
+		var qm = $queueList_mobileList.offset(),
+				sm = $searchBar_mobileList.offset();
+
+		$(this).toggleClass('is-active');
+		if ($(this).hasClass('is-active')) {
+			$queueList_mobileList.hide();
+			$searchBar_mobileList.fadeIn('fast');
+		} else {
+			$queueList_mobileList.fadeIn('fast');
+			$searchBar_mobileList.hide();
 		}
 	});
 
