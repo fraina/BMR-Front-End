@@ -5,9 +5,20 @@
 // *************************************
 
 .songList
+	display: none
+	+susy-breakpoint($breakpoint-desk, 12)
+		display: block
+		margin-left: 560px
+		height: 100%
+		overflow: hidden
+
+.songList-mobile
+	display: block
 	margin: 0 gutter(3)
 	+susy-breakpoint($breakpoint-tablet, 8)
 		margin: 0 gutter(4)
+	+susy-breakpoint($breakpoint-desk, 12)
+		display: none
 
 // -------------------------------------
 //   Scaffolding
@@ -44,13 +55,3 @@
 // -------------------------------------
 //   Status
 // -------------------------------------
-
-.songList-media--mobile
-	display: block
-	+susy-breakpoint($breakpoint-desk, 12)
-		display: none
-
-.songList-media--desktop
-	display: none
-	+susy-breakpoint($breakpoint-desk, 12)
-		display: block

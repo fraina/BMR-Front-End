@@ -62,7 +62,7 @@ require([
 			$queuelist_option_i = $('.queuelist-option i'),
 			$queuelist_list = $('.queuelist-list');
 
-	// $('#coverflow').coverflow();
+	$('.songList-coverflow').coverflow();
 
 	$audio_player.mediaelementplayer({
 		alwaysShowControls: true,
