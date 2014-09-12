@@ -26,6 +26,7 @@
 	background-color: $c-secondary;
 	position: relative;
 	overflow: hidden;
+	height: 2px;
 }
 .meter > span:after {
 	content: "";
