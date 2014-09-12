@@ -5,13 +5,44 @@
 // *************************************
 
 .songList
+	display: none
+	+susy-breakpoint($breakpoint-desk, 12)
+		+span-columns(8 omega, 12)
+		position: relative
+		display: block
+		height: 100%
+		overflow-x: hidden
+		overflow-y: auto
+
+.songList-mobile
+	display: block
 	margin: 0 gutter(3)
 	+susy-breakpoint($breakpoint-tablet, 8)
 		margin: 0 gutter(4)
+	+susy-breakpoint($breakpoint-desk, 12)
+		display: none
 
 // -------------------------------------
 //   Scaffolding
 // -------------------------------------
+
+.songList-songs
+	z-index: 9999
+	width: 100%
+	background-color: rgba(black, .5)
+
+	.songList-albumTitle
+		position: absolute
+		margin-top: 417px
+		display: block
+		width: 100%
+		height: 30px
+		text-align: center
+		font-size: $b-fontSize-xl
+
+	table
+		position: absolute
+		margin-top: 450px
 
 // -------------------------------------
 //   Status
@@ -44,13 +75,3 @@
 // -------------------------------------
 //   Status
 // -------------------------------------
-
-.songList-media--mobile
-	display: block
-	+susy-breakpoint($breakpoint-desk, 12)
-		display: none
-
-.songList-media--desktop
-	display: none
-	+susy-breakpoint($breakpoint-desk, 12)
-		display: block

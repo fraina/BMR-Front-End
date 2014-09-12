@@ -1,7 +1,8 @@
 .ui-coverflow-wrapper {
 	position: relative;
 	z-index: 1;
-	overflow: hidden;
+	margin-top: $b-space-l + 1em;
+	// overflow: hidden;
 }
 
 .ui-helper-clearfix:before,
@@ -19,6 +20,7 @@
 	-ms-perspective: 500px;
 	perspective: 500px;
 	position: absolute;
+	height: 400px;
 	z-index: 2;
 }
 

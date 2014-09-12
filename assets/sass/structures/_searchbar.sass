@@ -4,11 +4,29 @@
 //
 // *************************************
 
-// .searchbar
+.searchBar
+	display: none
+	position: absolute
+	width: 100%
+	height: 30px
+	padding: 4px 0
+	background-color: $c-secondary
+	z-index: 999
+	+susy-breakpoint($breakpoint-desk, 12)
+		display: block
 
 // -------------------------------------
 //   Scaffolding
 // -------------------------------------
+
+.searchBar input,
+.searchBar .searchBar-typeSelect
+	background-color: rgba($searchbar-background, .3)
+	float: right
+	margin-right: 4px
+
+.searchBar .searchBar-typeSelect
+	width: 100px
 
 // -------------------------------------
 //   Status

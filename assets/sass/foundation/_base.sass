@@ -25,6 +25,7 @@ body
 .container
 	position: absolute
 	width: 100%
+	height: 100%
 	overflow-x: hidden
 	transition: all 0.3s
 	&.hide
@@ -39,10 +40,11 @@ body
 		transform-origin: 50% 100% 0px
 		+opacity(.1)
 
+.main
 	+susy-breakpoint($breakpoint-desk, 12)
-		+container(show)
-		border: 1px green solid
-
+		+span-columns(4, 12)
+		position: fixed
+		top: 10%
 
 // -------------------------------------
 //   Block Content

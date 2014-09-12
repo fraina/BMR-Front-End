@@ -12,6 +12,10 @@
 	+susy-breakpoint($breakpoint-tablet, 8)
 		padding-bottom: $b-space
 		display: table
+	+susy-breakpoint($breakpoint-desk, 12)
+		+border-radius(0 5px 5px 0)
+		padding: $b-space-s 0 $b-space-xs
+		width: 100%
 
 // -------------------------------------
 //   Scaffolding
@@ -38,6 +42,9 @@
 		display: block
 		margin: 0 gutter(0.8)
 
+	+susy-breakpoint($breakpoint-desk, 12)
+		margin: 0 $b-space-s
+
 .player-info
 	margin: 0 gutter(3)
 	dd
@@ -51,6 +58,9 @@
 		position: relative
 		padding-left: gutter(3)
 		padding-right: gutter(3)
+	+susy-breakpoint($breakpoint-desk, 12)
+		padding-left: 0
+		padding-right: $b-space-s
 
 .player-title
 	color: $player-title

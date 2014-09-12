@@ -4,11 +4,55 @@
 //
 // *************************************
 
-// .queueList
+.queuelist
+	display: none
+	width: 100%
+	padding-top: $b-space-s
+	+susy-breakpoint($breakpoint-desk, 12)
+		display: block
+	> div
+		display: inline-block
+		vertical-align: top
 
 // -------------------------------------
 //   Scaffolding
 // -------------------------------------
+
+.queuelist-option
+	width: 125px
+	text-align: center
+	.is-active
+		color: $c-text
+	i
+		color: $queuelist-queue
+		display: block
+		cursor: pointer
+		line-height: 2
+		font-size: $b-fontSize-xl * 1.5
+		transition: all 0.3s
+		&:hover
+			color: $c-text
+
+.queuelist-list
+	padding-top: $b-space-xs
+	color: $queuelist-queue
+	.is-active
+		color: $c-text
+
+	ul
+		position: relative
+		margin: 0
+		padding: 0
+		li
+			padding-left: 20px
+			&:before
+				margin-left: -17px
+				padding-right: 4px
+
+.queuelist-history
+	display: none
+	span[contenteditable=true]
+		border-bottom: 1px #eee dotted
 
 // -------------------------------------
 //   Status

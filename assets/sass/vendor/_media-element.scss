@@ -19,6 +19,9 @@
 		margin-right: 0;
 		margin-left: $b-space-xs;
 	}
+	@include susy-breakpoint($breakpoint-desk, 12) {
+		padding: 0;
+	}
 }
 
 .mejs-time-rail {
@@ -28,12 +31,16 @@
 	height: 2px;
 	cursor: pointer;
 	display: table-cell;
+	@include susy-breakpoint($breakpoint-desk, 12) {
+		padding: 0;
+	}
 
 	.mejs-time-total{
-		@include border-radius(3px);
-		height: 2px;
-		background: $player-total;
-		display: block;
+		// @include border-radius(3px);
+		// height: 2px;
+		// background: $player-total;
+		// display: block;
+		display: none;
 	}
 
 	.mejs-time-loaded {
@@ -68,14 +75,14 @@
 .mejs-horizontal-volume-slider {
 	@extend .td;
 	position: relative;
-	width: 50px;
+	width: $b-space-l;
 	cursor: pointer;
 	display: table-cell;
 	height: 2px;
 
 	.mejs-horizontal-volume-total {
 		@include border-radius(4px);
-		width: 50px;
+		width: $b-space-l;
 		height: 2px;
 		background: $player-total;
 	}
