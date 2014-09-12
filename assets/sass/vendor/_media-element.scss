@@ -75,14 +75,14 @@
 .mejs-horizontal-volume-slider {
 	@extend .td;
 	position: relative;
-	width: $b-space-l + 2em;
+	width: $b-space-l;
 	cursor: pointer;
 	display: table-cell;
 	height: 2px;
 
 	.mejs-horizontal-volume-total {
 		@include border-radius(4px);
-		width: $b-space-l + em;
+		width: $b-space-l;
 		height: 2px;
 		background: $player-total;
 	}

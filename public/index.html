@@ -41,7 +41,7 @@
 
 			<div class="searchBar-area table">
 					<div class="searchBar-typeSelect td">
-						<select name="" id="">Type
+						<select name="" id="">
 							<option value="#">#</option>
 							<option value="Title">Title</option>
 							<option value="Album">Album</option>
@@ -102,6 +102,20 @@
 	<div class="overlay"></div>
 
 	<div class="container">
+
+		<div class="searchBar">
+			<input type="search" placeholder="SEARCH!">
+			<div class="searchBar-typeSelect">
+				<select name="" id="">
+					<option value="#">#</option>
+					<option value="Title">Title</option>
+					<option value="Album">Album</option>
+					<option value="Artist">Artist</option>
+				</select>
+				<i class="icon-dropDown"></i>
+			</div>
+		</div>
+
 		<div class="main">
 			<div class="player">
 
@@ -137,6 +151,7 @@
 						<li>Evens</li>
 					</ul>
 					<ul class="queuelist-history">
+						<li class="is-active">show <span contenteditable="true">3</span> tunes</li>
 						<li>The Wind of Gold</li>
 						<li>Fujimori 祭 FESTIVAL</li>
 						<li>Mermaid Girl</li>
@@ -148,7 +163,6 @@
 		</div>
 
 		<div class="songList">
-			<!-- <div class="searchbar"></div> -->
 			<div class="songList-list">
 				<div class="songList-coverflow">
 					<img src="images/cover/iscream.jpg" />
@@ -157,7 +171,88 @@
 					<img src="images/cover/studyinbrown.jpg" />
 					<img src="images/cover/thewall.jpg" />
 				</div>
-				<!-- <div class="songList-songs">123</div> -->
+				<div id="license" style="position: absolute"></div>
+				<div class="songList-songs">
+					<span class="songList-albumTitle ellipsis">Rainbow☆Rainbow Disclaimer</span>
+					<table class="songList-table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Title</th>
+								<th>Artist</th>
+								<th>Album</th>
+								<th>Duration</th>
+								<th>Order</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>101</td>
+								<td>I'm so Happy</td>
+								<td>Ryu☆</td>
+								<td>Rainbow☆Rainbow Disclaimer</td>
+								<td>1:52</td>
+								<td><a href="#" class="btn">Order</a></td>
+							</tr>
+							<tr>
+								<td>2657</td>
+								<td>[V]</td>
+								<td>dj TAKA</td>
+								<td>beatmania IIDX 5th</td>
+								<td>2:07</td>
+								<td><a href="#" class="btn is-active">Ordered</a></td>
+							</tr>
+							<tr>
+								<td>456</td>
+								<td>The Wind of Gold</td>
+								<td>kors k</td>
+								<td>S2TB Files2:Activate</td>
+								<td>1:34</td>
+								<td><a href="#" class="btn is-active">Ordered</a></td>
+							</tr>
+							<tr>
+								<td>2657</td>
+								<td>[V]</td>
+								<td>dj TAKA</td>
+								<td>beatmania IIDX 5th</td>
+								<td>2:07</td>
+								<td><a href="#" class="btn is-active">Ordered</a></td>
+							</tr>
+							<tr>
+								<td>101</td>
+								<td>I'm so Happy</td>
+								<td>Ryu☆</td>
+								<td>Rainbow☆Rainbow Disclaimer</td>
+								<td>1:52</td>
+								<td><a href="#" class="btn">Order</a></td>
+							</tr>
+							<tr>
+								<td>2657</td>
+								<td>[V]</td>
+								<td>dj TAKA</td>
+								<td>beatmania IIDX 5th</td>
+								<td>2:07</td>
+								<td><a href="#" class="btn is-active">Ordered</a></td>
+							</tr>
+							<tr>
+								<td>101</td>
+								<td>I'm so Happy</td>
+								<td>Ryu☆</td>
+								<td>Rainbow☆Rainbow Disclaimer</td>
+								<td>1:52</td>
+								<td><a href="#" class="btn">Order</a></td>
+							</tr>
+							<tr>
+								<td>2657</td>
+								<td>[V]</td>
+								<td>dj TAKA</td>
+								<td>beatmania IIDX 5th</td>
+								<td>2:07</td>
+								<td><a href="#" class="btn is-active">Ordered</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 

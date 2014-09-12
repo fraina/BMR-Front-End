@@ -15,7 +15,9 @@ require({
 
 			"mediaElement": "vendor/media-element/mediaelement-and-player.min",
 			"niceScroll": "vendor/nicescroll/jquery.nicescroll.min",
-			"niceScrollplus": "vendor/nicescroll/jquery.nicescroll.plus"
+			"niceScrollplus": "vendor/nicescroll/jquery.nicescroll.plus",
+
+			"smartresize": "vendor/jquery.smartresize"
 	},
 
 	shim: {
@@ -25,6 +27,7 @@ require({
 		"rendererClassic" : [ "jquery" ],
 		"supportCore" : [ "jquery" ],
 		"supportTransform" : [ "jquery" ],
+		"smartresize" : [ "jquery" ],
 		"coverflowjs" : {
 			deps : [
 				"jquery",
@@ -45,14 +48,15 @@ require([
 	'coverflowjs',
 	'mediaElement',
 	'niceScroll',
-	'niceScrollplus'
-], function (jquery, coverflowjs, mediaElement, niceScroll, niceScrollplus) {
+	'niceScrollplus',
+	'smartresize'
+], function (jquery, coverflowjs, mediaElement, niceScroll, niceScrollplus, smartresize) {
 
 	var $body = $('body'),
 			$container = $('.container'),
 			$audio_player = $('#audio-player'),
-			$icon_queue = $(".icon-openQueue"),
-			$icon_search = $('.icon-search'),
+			$icon_queue = $(".queueList-mobile .icon-openQueue"),
+			$icon_search = $('.queueList-mobile .icon-search'),
 			$overlay = $('.overlay'),
 			$mobileList = $('.mobileList'),
 			$queueList_mobile = $('.queueList-mobile'),
@@ -60,11 +64,29 @@ require([
 			$queueList_mobile_li = $('.queueList-mobileList ul li'),
 			$searchBar_mobileList = $('.searchBar-mobileList'),
 			$queuelist_option_i = $('.queuelist-option i'),
-			$queuelist_list = $('.queuelist-list');
+			$queuelist_list = $('.queuelist-list'),
+			$queuelist_historyTunes = $("span[contenteditable=true]");
 
-	$('.songList-coverflow').coverflow({
-		'scale': '0.5'
+	var $license = $( '#license' ),
+			$coverflow = $( '.songList-coverflow' ).coverflow({
+				active : 0,
+				select : function( ev, ui ) {
+				 var el = ui.active;
+
+				 $license.html([
+					'<p> change test: ' + el.attr('src') + '</p>'
+				 ].join('') );
+				}
+			});
+
+	$(window).smartresize(function() {
+		$coverflow.coverflow();
 	});
+
+
+	/*$(window).smartresize(function() {
+		$('.songList-coverflow').coverflow();
+	});*/
 
 	$audio_player.mediaelementplayer({
 		alwaysShowControls: true,
@@ -85,6 +107,11 @@ require([
 		});
 	}
 	scrollable();
+
+	$queuelist_historyTunes.keypress(function(e){ return e.which != 13; });
+	$queuelist_historyTunes.keyup(function(){
+		// alert($(this).text());
+	})
 
 	$icon_queue.click(function() {
 		$(this).toggleClass("on");
