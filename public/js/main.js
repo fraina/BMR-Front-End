@@ -62,7 +62,9 @@ require([
 			$queuelist_option_i = $('.queuelist-option i'),
 			$queuelist_list = $('.queuelist-list');
 
-	$('.songList-coverflow').coverflow();
+	$('.songList-coverflow').coverflow({
+		'scale': '0.5'
+	});
 
 	$audio_player.mediaelementplayer({
 		alwaysShowControls: true,
@@ -124,6 +126,10 @@ require([
 			$(this).addClass('is-active').siblings().toggleClass('is-active');
 			$queuelist_list.find('ul:visible').hide().siblings().fadeIn('fast');
 		}
+	})
+
+	$('.mejs-playpause-button').click(function(){
+		$('.meter span:eq(0)').toggleClass('animate');
 	})
 
 })
