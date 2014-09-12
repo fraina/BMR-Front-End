@@ -21,3 +21,5 @@ output_style = :compact
 line_comments = false
 
 preferred_syntax = :sass
+
+Encoding.default_external = "UTF-8"

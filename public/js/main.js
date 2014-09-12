@@ -3,9 +3,6 @@ require({
 	paths: {
 			"jquery": "lib/jquery/jquery-git2",
 			"jqueryui": "lib/jquery-ui/jquery-ui.min",
-			"angular": "lib/angularjs/angular.1.3.x.min",
-			"angular-route": "lib/angularjs/angular-route.min",
-			"angularAMD": "lib/angularjs/angularAMD",
 
 			"coverflowjs": "vendor/coverflow/coverflow",
 			"renderer3d": "vendor/coverflow/renderer.3d",
@@ -21,8 +18,6 @@ require({
 	},
 
 	shim: {
-		"angularAMD": ['angular'],
-		"angular-route": ['angular'],
 		"renderer3d" : [ "jquery", "rendererClassic" ],
 		"rendererClassic" : [ "jquery" ],
 		"supportCore" : [ "jquery" ],
@@ -40,7 +35,6 @@ require({
 		}
 	},
 
-	deps: ['app']
 });
 
 require([
@@ -51,6 +45,8 @@ require([
 	'niceScrollplus',
 	'smartresize'
 ], function (jquery, coverflowjs, mediaElement, niceScroll, niceScrollplus, smartresize) {
+
+	"use strict";
 
 	var $body = $('body'),
 			$container = $('.container'),
@@ -82,11 +78,6 @@ require([
 	$(window).smartresize(function() {
 		$coverflow.coverflow();
 	});
-
-
-	/*$(window).smartresize(function() {
-		$('.songList-coverflow').coverflow();
-	});*/
 
 	$audio_player.mediaelementplayer({
 		alwaysShowControls: true,
